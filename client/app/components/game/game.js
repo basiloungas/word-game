@@ -9,7 +9,10 @@ const gameModule = angular
 
     $stateProvider.state('game', {
       url: '/game',
-      component: 'game'
+      component: 'game',
+      resolve: {
+        gameServiceInit: GameService => GameService.initialize()
+      },
     });
   })
   .component('game', gameComponent)
