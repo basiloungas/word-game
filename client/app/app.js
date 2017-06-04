@@ -3,6 +3,7 @@ import uiRouter from 'angular-ui-router';
 import Common from './common/common';
 import Components from './components/components';
 import HighscoresService from './services/highscores/highscores';
+import GameService from './services/game/game';
 import AppComponent from './app.component';
 import 'normalize.css';
 
@@ -20,4 +21,5 @@ angular.module('app', deps)
     $locationProvider.html5Mode(true).hashPrefix('!');
   })
   .service('HighscoresService', HighscoresService)
+  .service('GameService', GameService)
   .component('app', AppComponent);
