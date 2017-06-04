@@ -1,6 +1,6 @@
 # Word game sample app
 
-This is a sample app vuilt with angular.js (1.x)
+This is a sample app built with angular.js (1.x)
 
 It uses backendless.com for a simple backend.
 
