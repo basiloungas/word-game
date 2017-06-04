@@ -3,9 +3,10 @@ import uiRouter from 'angular-ui-router';
 import gameComponent from './game.component';
 import NamePicker from './components/namepicker/namepicker';
 import GamePage from './components/gamepage/gamepage';
+import GameOver from './components/gameover/gameover';
 
 const gameModule = angular
-  .module('game', [uiRouter, NamePicker, GamePage])
+  .module('game', [uiRouter, NamePicker, GamePage, GameOver])
   .config(($stateProvider) => {
     'ngInject';
 

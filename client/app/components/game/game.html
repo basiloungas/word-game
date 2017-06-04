@@ -17,6 +17,14 @@
         username="$ctrl.username"
       ></gamepage>
     </div>
+    <div ng-switch-when="GAMEOVER">
+      <gameover
+        username="$ctrl.username"
+        total-score="$ctrl.wordState.totalScore"
+        solved-words-count="$ctrl.wordState.solvedWordsCount"
+        on-persist-score="$ctrl.persistScore()"
+      ></gameover>
+    </div>
     <div ng-switch-default>
       <p>default</p>
     </div>
