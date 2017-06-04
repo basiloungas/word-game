@@ -7,8 +7,9 @@ const STATES = {
 class GameController {
   STATES = STATES
 
-  constructor($scope, GameService) {
+  constructor($scope, GameService, HighscoresService) {
     this.GameService = GameService;
+    this.HighscoresService = HighscoresService;
     this.$scope = $scope;
 
     this.username = '';
@@ -42,6 +43,16 @@ class GameController {
     }
   }
 
+  persistScore() {
+    return this.HighscoresService.persistHighScore({
+      username: this.username,
+      score: this.wordState.totalScore
+    })
+    .then(() => {
+      alert('High score saved!');
+    })
+  }
+
   startGame() {
     this.state = this.STATES.playing;
 
@@ -65,6 +76,6 @@ class GameController {
   }
 }
 
-GameController.$inject = ['$scope', 'GameService'];
+GameController.$inject = ['$scope', 'GameService', 'HighscoresService'];
 
 export default GameController;

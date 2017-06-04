@@ -8,6 +8,9 @@ class HighscoresService {
     this.scores = [];
   }
 
+  persistHighScore(data) {
+    return this.$http.post(this.baseUrl, data);
+  }
 
   getScores() {
     return this.$http({
