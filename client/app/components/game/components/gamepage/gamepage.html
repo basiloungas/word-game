@@ -1,0 +1,28 @@
+<div>
+  <h1>Hey <span>{{ $ctrl.username }}</span>!</h1>
+  <p>Try to find as many words as possible before the time runs out...</p>
+
+  <h2>You have {{$ctrl.secondsLeft}} seconds left</h2>
+  <h3>So far yo have solved {{$ctrl.solvedWordsCount}} words with a total score of: {{$ctrl.totalScore}}</h3>
+
+  <form name="usernameForm">
+    <div>
+      <p>Score for word: {{$ctrl.word.currentScore}} out of {{$ctrl.word.maxScore}}</p>
+    </div>
+
+    <div>
+      <label>
+          Scrambled word:
+          <input readonly type="text" name="mangledWord" ng-model="$ctrl.word.scrambledWord" required>
+      </label>
+    </div>
+
+    <div>
+      <label>
+          Your guess:
+          <input type="text" name="quess" ng-keydown="$ctrl.onKeyDown($event)" ng-keyup="$ctrl.onKeyUp($event)" ng-model="$ctrl.guess" required>
+      </label>
+    </div>
+  </form>
+</div>
+
