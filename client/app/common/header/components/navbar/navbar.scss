@@ -1,0 +1,32 @@
+@import '../../../common';
+
+.navbar {
+  display: flow-root;
+
+  h1 {
+    padding: 0;
+    margin: 0;
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
+    font-size: 1.6rem;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  .logo {
+    float: left;
+  }
+
+  .nav-links {
+    float: right;
+  }
+
+  .nav-link {
+    margin-left: 20px;
+  }
+}
