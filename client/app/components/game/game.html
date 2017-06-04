@@ -1,3 +1,12 @@
 <div>
-  <h1>{{ $ctrl.name }}</h1>
+  <h1>Welcome to the Game!</h1>
+
+  <div ng-switch="$ctrl.state" >
+    <div ng-switch-when="GETNAME">
+      <namepicker on-pick-name="$ctrl.onPickName(username)"></namepicker>
+    </div>
+    <div ng-switch-default>
+      <p>default</p>
+    </div>
+  </div>
 </div>

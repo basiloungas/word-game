@@ -1,9 +1,10 @@
 import angular from 'angular';
 import uiRouter from 'angular-ui-router';
 import gameComponent from './game.component';
+import NamePicker from './components/namepicker/namepicker';
 
 const gameModule = angular
-  .module('game', [uiRouter])
+  .module('game', [uiRouter, NamePicker])
   .config(($stateProvider) => {
     "ngInject";
 
