@@ -1,3 +1,20 @@
 <div>
-  <h1>{{ $ctrl.name }}</h1>
+  <h1>List of 10 top Highscores</h1>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Username</th>
+        <th>Score</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr ng-repeat="(key, value) in $ctrl.scoresList | orderBy: '-score' | limitTo : 10">
+        <td>{{value.userName}}</td>
+        <td>{{value.score}}</td>
+      </tr>
+    <tbody>
+  </table>
+
 </div>

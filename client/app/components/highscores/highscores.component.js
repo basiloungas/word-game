@@ -3,9 +3,12 @@ import controller from './highscores.controller';
 import './highscores.scss';
 
 const highscoresComponent = {
-  bindings: {},
+  bindings: {
+    scoresList: '<',
+  },
   template,
-  controller
+  controller,
+
 };
 
 export default highscoresComponent;

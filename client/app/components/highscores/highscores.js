@@ -4,14 +4,17 @@ import highscoresComponent from './highscores.component';
 
 const highscoresModule = angular
   .module('highscores', [uiRouter])
-  .config(($stateProvider) => {
-      "ngInject";
+  .config($stateProvider => {
+    'ngInject';
 
-      $stateProvider.state('highscores', {
-        url: '/highscores',
-        component: 'highscores'
-      });
-    })
+    $stateProvider.state('highscores', {
+      url: '/highscores',
+      component: 'highscores',
+      resolve: {
+        scoresList: HighscoresService => HighscoresService.getScores()
+      },
+    });
+  })
   .component('highscores', highscoresComponent)
   .name;
 
