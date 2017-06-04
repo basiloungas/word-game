@@ -1,8 +1,9 @@
-<div>
-  <h1>Hey {{ $ctrl.username }}!</h1>
-  <p>You managed to guess {{ $ctrl.solvedWordsCount }} words</p>
-  <p>and you ended up with a total score of {{ $ctrl.totalScore }} words.</p>
+<div class="well">
+  <h1>Hey <strong>{{ $ctrl.username }}</strong>!</h1>
+
+  <p>You managed to guess <span class="label label-success">{{ $ctrl.solvedWordsCount }} words</span>!</p>
+  <p>and you ended up with a total score of <span class="label label-success">{{ $ctrl.totalScore }} words</span>!</p>
   <p>Congratulations!</p>
 
-  <button ng-click="$ctrl.onPersistScore()">Save your high score!</button>
+  <button class="btn btn-primary btn-lg" ng-click="$ctrl.onPersistScore()">Save your high score!</button>
 </div>

@@ -1,27 +1,35 @@
-<div>
-  <h1>Hey <span>{{ $ctrl.username }}</span>!</h1>
+<div class="well">
+  <h1>Hey <strong>{{ $ctrl.username }}</strong>!</h1>
+
   <p>Try to find as many words as possible before the time runs out...</p>
 
-  <h2>You have {{$ctrl.secondsLeft}} seconds left</h2>
-  <h3>So far yo have solved {{$ctrl.solvedWordsCount}} words with a total score of: {{$ctrl.totalScore}}</h3>
+  <p>You have <span class="label label-warning"><strong>{{$ctrl.secondsLeft}}</strong> seconds left</span></p>
 
-  <form name="usernameForm">
-    <div>
-      <p>Score for word: {{$ctrl.word.currentScore}} out of {{$ctrl.word.maxScore}}</p>
+  <p>So far you have solved <span class="label label-default">{{$ctrl.solvedWordsCount}} words</span> with a total score of: <span class="label label-default">{{$ctrl.totalScore}}</span></p>
+
+
+  <form>
+    <div class="form-group">
+      <label for="scrambled-word">Scrambled word:</label>
+      <input readonly type="text" class="form-control" name="scrambled-word" id="scrambled-word" ng-model="$ctrl.word.scrambledWord">
     </div>
 
-    <div>
-      <label>
-          Scrambled word:
-          <input readonly type="text" name="mangledWord" ng-model="$ctrl.word.scrambledWord" required>
-      </label>
-    </div>
-
-    <div>
-      <label>
-          Your guess:
-          <input autofocus type="text" name="quess" ng-keydown="$ctrl.onKeyDown($event)" ng-keyup="$ctrl.onKeyUp($event)" ng-model="$ctrl.guess" required>
-      </label>
+    <div class="form-group">
+      <label for="guess">Your guess:</label>
+      <input
+        autofocus
+        type="text"
+        class="form-control"
+        name="guess"
+        id="guess"
+        ng-keydown="$ctrl.onKeyDown($event)"
+        ng-keyup="$ctrl.onKeyUp($event)"
+        ng-model="$ctrl.guess"
+        required
+      >
+      <span class="help-block">
+        Score for this word: <span class="label label-default">{{$ctrl.word.currentScore}} out of {{$ctrl.word.maxScore}}</span></p>
+      </span>
     </div>
   </form>
 </div>
