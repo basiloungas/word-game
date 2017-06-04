@@ -2,6 +2,7 @@ import angular from 'angular';
 import uiRouter from 'angular-ui-router';
 import Common from './common/common';
 import Components from './components/components';
+import HighscoresService from './services/highscores/highscores';
 import AppComponent from './app.component';
 import 'normalize.css';
 
@@ -18,4 +19,5 @@ angular.module('app', deps)
     // #how-to-configure-your-server-to-work-with-html5mode
     $locationProvider.html5Mode(true).hashPrefix('!');
   })
+  .service('HighscoresService', HighscoresService)
   .component('app', AppComponent);
