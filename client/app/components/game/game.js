@@ -2,11 +2,12 @@ import angular from 'angular';
 import uiRouter from 'angular-ui-router';
 import gameComponent from './game.component';
 import NamePicker from './components/namepicker/namepicker';
+import GamePage from './components/gamepage/gamepage';
 
 const gameModule = angular
-  .module('game', [uiRouter, NamePicker])
+  .module('game', [uiRouter, NamePicker, GamePage])
   .config(($stateProvider) => {
-    "ngInject";
+    'ngInject';
 
     $stateProvider.state('game', {
       url: '/game',

@@ -5,6 +5,18 @@
     <div ng-switch-when="GETNAME">
       <namepicker on-pick-name="$ctrl.onPickName(username)"></namepicker>
     </div>
+    <div ng-switch-when="PLAYING">
+      <gamepage
+        seconds-left="$ctrl.secondsLeft"
+        word="$ctrl.wordState.activeWord"
+        total-score="$ctrl.wordState.totalScore"
+        solved-words-count="$ctrl.wordState.solvedWordsCount"
+        is-guess-correct="$ctrl.isGuessCorrect(guess)"
+        handle-correct-guess="$ctrl.handleCorrectGuess()"
+        on-back-space-pressed="$ctrl.onBackSpacePressed()"
+        username="$ctrl.username"
+      ></gamepage>
+    </div>
     <div ng-switch-default>
       <p>default</p>
     </div>
