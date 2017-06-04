@@ -11,9 +11,8 @@ class GameController {
     this.GameService = GameService;
     this.$scope = $scope;
 
-    this.username = 'nick';
+    this.username = '';
     this.state = this.STATES.getName;
-    this.startGame();
   }
 
   onPickName(name) {
