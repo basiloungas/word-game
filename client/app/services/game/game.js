@@ -60,7 +60,6 @@ class GameService {
 
   tick(onTimerEnd, onTimerTick) {
     onTimerTick(this.secondsLeft);
-    return;
 
     this.timerEnd = setTimeout(() => {
       this.secondsLeft -= 1;
